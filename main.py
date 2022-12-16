@@ -8,8 +8,11 @@ app = FastAPI()
 async def root(request: Request):
     print('request.headers')
     print(request.headers)
-    print('request.headers[Authorization]')
-    print(request.headers['Authorization'])
+
+    if ('Authorization' in request.headers):
+        print('request.headers[Authorization]')
+        print(request.headers['Authorization'])
+
     return {"message": "Hello World"}
 
 # if __name__ == '__main__':

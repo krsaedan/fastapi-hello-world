@@ -12,6 +12,10 @@ async def root(request: Request):
     if ('Authorization' in request.headers):
         print('request.headers[Authorization]')
         print(request.headers['Authorization'])
+    
+    data = await request.json()
+    print('data')
+    print(data)
 
     return {"message": "Hello World"}
 
